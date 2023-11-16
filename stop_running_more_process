@@ -1,0 +1,14 @@
+you have written a shell scripts and scheduled it to run (e.g. for every 5 minits) using crontab job and it is likely that
+the process will take long time to finish and you want to stop running two or more of this script simultaneously
+
+you give a name to your process
+* * * * * exec -a PsName /Your/script.sh
+
+and on top of  your script:
+
+ps_count=$(/usr/bin/pgrep -f PsName -c)
+if [[ $ps_count -gt 1 ]];
+then
+echo "process is running ..."
+exit 1
+fi
