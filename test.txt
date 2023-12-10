@@ -1,0 +1,2 @@
+ Bash can also read and execute commands from a file, called a shell script.
+ Bash can also read and execute commands from a file, called a shell script.
